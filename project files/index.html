@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resolve Now</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1>&#128737; Resolve Now</h1>
+    <div>
+        <a href="#" data-page="home" onclick="showPage('home')">Home</a>
+        <a href="#" data-page="submit" onclick="showPage('submit')">Submit Complaint</a>
+        <a href="#" data-page="track" onclick="showPage('track')">Track</a>
+        <a href="#" data-page="admin" onclick="showPage('admin')">Admin</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="flash" class="flash"></div>
+
+    <div id="home" class="page">
+        <div class="hero">
+            <h2>Welcome to Resolve Now</h2>
+            <p>Your trusted platform for filing and tracking complaints online</p>
+        </div>
+        <div class="stats">
+            <div class="stat"><h3 id="stat-total">0</h3><p>Total</p></div>
+            <div class="stat"><h3 id="stat-pending">0</h3><p>Pending</p></div>
+            <div class="stat"><h3 id="stat-resolved">0</h3><p>Resolved</p></div>
+            <div class="stat"><h3 id="stat-rejected">0</h3><p>Rejected</p></div>
+        </div>
+        <div class="card">
+            <h2>Recent Complaints</h2>
+            <table>
+                <thead><tr><th>ID</th><th>Subject</th><th>Category</th><th>Status</th><th>Date</th></tr></thead>
+                <tbody id="recent-body"><tr><td colspan="5">No complaints yet.</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="submit" class="page">
+        <div class="card">
+            <h2>&#128221; Submit a Complaint</h2>
+            <form id="submit-form">
+                <label>Full Name</label>
+                <input name="name" required>
+                <label>Email</label>
+                <input name="email" type="email" required>
+                <label>Category</label>
+                <select name="category">
+                    <option>Product Issue</option>
+                    <option>Service Complaint</option>
+                    <option>Billing Problem</option>
+                    <option>Delivery Issue</option>
+                    <option>Staff Behavior</option>
+                    <option>Other</option>
+                </select>
+                <label>Subject</label>
+                <input name="subject" required>
+                <label>Description</label>
+                <textarea name="description" required></textarea>
+                <button class="btn" type="submit">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="track" class="page">
+        <div class="card">
+            <h2>&#128269; Track Your Complaint</h2>
+            <form id="track-form">
+                <label>Complaint ID or Email</label>
+                <input id="track-query" placeholder="Enter complaint ID or email" required>
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+        <div id="track-results"></div>
+    </div>
+
+    <div id="admin" class="page">
+        <div class="card">
+            <h2>&#9881; Admin Panel</h2>
+            <table>
+                <thead><tr><th>ID</th><th>Name</th><th>Subject</th><th>Category</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+                <tbody id="admin-body"><tr><td colspan="7">No complaints.</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
